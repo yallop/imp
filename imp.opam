@@ -1,0 +1,20 @@
+opam-version: "2.0"
+name: "imp"
+version: "dev"
+maintainer: "yallop@gmail.com"
+authors: ["Leo White" "Jeremy Yallop"]
+homepage: "https://github.com/yallop/imp"
+dev-repo: "http://github.com/yallop/imp.git"
+bug-reports: "http://github.com/yallop/imp/issues"
+license: "MIT"
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs]
+]
+
+depends: [
+   "dune" {build}
+   "ocaml-variants"
+     { = "4.02.1+modular-implicits" | = "4.02.1+modular-implicits-ber" }
+]
+
